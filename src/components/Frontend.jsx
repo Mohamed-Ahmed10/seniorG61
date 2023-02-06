@@ -1,25 +1,28 @@
 import React, {Component} from "react";
 
 export default class Frontend extends Component {
+    // constructor(props) {
+    //     super(props);
+
+    //     this.handleUsername = this.handleUsername.bind(this);
+    // }
     state = {
-        courses: [
-            {courseName: "HTML", order: 1, finish: true},
-            {courseName: "JS", order: 3, finish: true},
-            {courseName: "React", order: 7, finish: false}
-        ]
+        username: "Mohamed Ahmed"
+    };
+
+    handleUsername = () => {
+        // this.state.username = "Ali"; ERROR
+
+        this.setState({username: "Ali"});
+        console.log(this);
     };
 
     render() {
         return (
             <div>
                 <h2>Frontend</h2>
-                {this.state.courses.map((course, index) => (
-                    <div key={index}>
-                        <h3>{course.courseName}</h3>
-                        <h4>{course.order}</h4>
-                        <hr />
-                    </div>
-                ))}
+                <div>{this.state.username}</div>
+                <button onClick={this.handleUsername}>Change</button>
             </div>
         );
     }

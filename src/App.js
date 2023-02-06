@@ -1,21 +1,29 @@
-import "./App.css";
-import Header from "./components/Header";
-import SiteLogo from "./assets/logo.svg";
-import Course from "./components/Course";
+import "./App.scss";
+import Counter from "./components/Counter";
+import DataParent from "./components/DataParent";
 import Frontend from "./components/Frontend";
+import SiteNav from "./components/SiteNav";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 function App() {
     return (
         <div>
-            Hello session three
-            <Header />
-            <img src={SiteLogo} alt="This is " width="200" />
-            <hr />
-            <Course courseName="JS" track="frontend" />
-            <Course courseName="PHP" track="backend" />
-            <Course courseName="React" track="frontend" />
-
+            <SiteNav />
+            <Container>
+                <Row>
+                    <Col xs={12} md={8}>
+                        1 of 3
+                    </Col>
+                    <Col xs={6}>2 of 3 (wider)</Col>
+                    <Col>3 of 3</Col>
+                </Row>
+            </Container>
             <Frontend />
-
+            <hr />
+            <Counter />
+            <hr />
+            <DataParent />
         </div>
     );
 }
