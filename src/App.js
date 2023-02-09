@@ -1,29 +1,22 @@
+import {Route, Routes} from "react-router-dom";
 import "./App.scss";
-import Counter from "./components/Counter";
-import DataParent from "./components/DataParent";
-import Frontend from "./components/Frontend";
+import About from "./views/About";
+import Home from "./views/Home";
+import Contact from "./views/Contact";
+import Error from "./views/Error";
 import SiteNav from "./components/SiteNav";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import HomeTwo from "./views/HomeTwo";
 function App() {
     return (
         <div>
             <SiteNav />
-            <Container>
-                <Row>
-                    <Col xs={12} md={8}>
-                        1 of 3
-                    </Col>
-                    <Col xs={6}>2 of 3 (wider)</Col>
-                    <Col>3 of 3</Col>
-                </Row>
-            </Container>
-            <Frontend />
-            <hr />
-            <Counter />
-            <hr />
-            <DataParent />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/home2" element={<HomeTwo />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/*" element={<Error />} />
+            </Routes>
         </div>
     );
 }
